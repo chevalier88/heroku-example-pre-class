@@ -1,6 +1,8 @@
 import express from 'express';
+import pg from 'pg';
 
 // const PORT = 3004;
+const { Pool } = pg;
 const PORT = process.env.PORT || 3004;
 // ...
 
