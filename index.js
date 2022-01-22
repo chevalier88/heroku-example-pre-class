@@ -20,7 +20,7 @@ if (process.env.DATABASE_URL) {
   pgConnectionConfigs = {
     user: 'grahamlim',
     host: 'localhost',
-    database: 'birding',
+    database: 'grahamlim',
     port: 5432,
   };
 }
