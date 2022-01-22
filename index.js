@@ -43,4 +43,15 @@ app.get('/', (request, response) => {
   response.render('bananas', data);
 });
 
+app.get('/cats', (request, response) => {
+  console.log('request came in');
+  pool.query('SELECT * from cats').then((result) => {
+    console.log(result.rows[0].name);
+    response.send(result.rows);  
+  }).catch((error) => {
+    console.error('Error executing query', error.stack);
+    response.status(503).send(result.rows);
+  });;
+});
+
 app.listen(PORT);
