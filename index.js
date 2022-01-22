@@ -8,7 +8,7 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.get('/bananas', (request, response) => {
+app.get('/', (request, response) => {
 
   const responseText = `This is a random number: ${Math.random()}`;
 
