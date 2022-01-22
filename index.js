@@ -56,4 +56,15 @@ app.get('/cats', (request, response) => {
   });;
 });
 
+app.get('/dbname', (request, response) => {
+  console.log('request came in');
+  pool.query('SELECT current_database()').then((result) => {
+    console.log(result.rows[0].name);
+    response.send(result.rows);  
+  }).catch((error) => {
+    console.error('Error executing query', error.stack);
+    response.status(503).send(result.rows);
+  });;
+});
+
 app.listen(PORT);
